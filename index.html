@@ -1,62 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rayavarapu Sravan Kumar - Frontend Developer Portfolio</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Custom styles for the Inter font and general body */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* Light gray background */
             color: #1e293b; /* Dark slate text */
         }
-        /* Ensure images are responsive and have rounded corners */
         img {
             max-width: 100%;
             height: auto;
             border-radius: 0.5rem; /* rounded-lg */
         }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1.2s ease-out;
+        }
+        /* Added for smooth transitions on hover elements not covered by transform utility */
+        a, button {
+            transition: all 0.3s ease-in-out;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow-lg py-4 px-4 sm:px-6 lg:px-8">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg py-4 px-4 sm:px-6 lg:px-8 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-800">Rayavarapu Sravan Kumar</h1>
             <div class="space-x-6">
-                <a href="#about" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-200 ease-in-out">About</a>
-                <a href="#skills" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-200 ease-in-out">Skills</a>
-                <a href="#projects" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-200 ease-in-out">Projects</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-200 ease-in-out">Contact</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-300 ease-in-out">About</a>
+                <a href="#skills" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-300 ease-in-out">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-300 ease-in-out">Projects</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-300 ease-in-out">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (About Me - Initial Impression) -->
+    <!-- Hero Section -->
     <section class="bg-gradient-to-br from-indigo-500 to-blue-600 py-20 px-4 sm:px-6 lg:px-8 text-white rounded-b-3xl shadow-xl">
-        <div class="max-w-7xl mx-auto text-center">
-            <!-- CORRECTED PROFILE PICTURE TAG -->
-            <img src="1000167958-removebg-preview.png" alt="Rayavarapu Sravan Kumar's Profile Picture" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
-            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-                Hi, I'm <span class="text-yellow-300">Rayavarapu Sravan Kumar</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-indigo-100 mb-8 max-w-2xl mx-auto">
-                An enthusiastic Fresher Frontend Developer passionate about creating beautiful and functional web experiences.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105">Get in Touch</a>
-                <a href="#projects" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-white hover:text-blue-600 transition duration-300 ease-in-out transform hover:scale-105">View My Work</a>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between relative">
+            <!-- Text -->
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">
+                    Hi, I'm <span class="text-yellow-300">Rayavarapu Sravan Kumar</span>
+                </h1>
+                <p class="text-lg md:text-xl text-indigo-100 mb-8">
+                    An enthusiastic Fresher Frontend Developer passionate about creating beautiful and functional web experiences.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start sm:space-x-4 space-y-4 sm:space-y-0">
+                    <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">Get in Touch</a>
+                    <a href="#projects" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-white hover:text-blue-600 transition duration-300 transform hover:scale-105">View My Work</a>
+                </div>
+            </div>
+
+            <!-- Profile Picture with Blob Background -->
+            <div class="md:w-1/2 relative flex justify-center md:justify-end animate-fadeIn mt-10 md:mt-0">
+                <div class="absolute -top-8 -right-8 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl z-0"></div>
+                <!-- Corrected image path: Assuming 1000167958-removebg-preview.png is in the same directory as index.html -->
+                <img src="1000167958-removebg-preview.png" alt="Rayavarapu Sravan Kumar's Profile Picture" class="w-60 h-60 rounded-full object-cover border-4 border-white shadow-lg z-10 transform transition duration-500 hover:scale-105" />
             </div>
         </div>
     </section>
 
-    <!-- Detailed About Me Section -->
+    <!-- About Section -->
     <section id="about" class="py-16 px-4 sm:px-6 lg:px-8 bg-white shadow-md rounded-lg mx-auto max-w-7xl mt-12 mb-12">
         <div class="text-center mb-12">
             <h2 class="text-4xl font-extrabold text-gray-800 mb-4">About Me</h2>
@@ -96,7 +117,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
                             </svg>
-                            Vignan's institute of information & Technology (2023 - 2027)
+                            Vignan's Institute of Information & Technology (2023 - 2027)
                         </li>
                     </ul>
                 </div>
@@ -226,6 +247,5 @@
         <p>&copy; 2025 Rayavarapu Sravan Kumar. All rights reserved.</p>
         <p class="mt-2">Designed with <span class="text-red-500">&hearts;</span> and Tailwind CSS.</p>
     </footer>
-
 </body>
 </html>
